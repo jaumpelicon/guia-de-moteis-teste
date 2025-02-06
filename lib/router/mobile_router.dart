@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../ui/initial_screen/initial_screen_view.dart';
+import '../ui/home_screen/home_screen_view.dart';
 
 abstract class AppRouter {
   List<RouteBase> get routes;
@@ -19,7 +19,7 @@ class MobileRouter {
       GoRoute(
         path: initialScreenRoute,
         name: initialScreenRoute,
-        builder: (_, __) => const InitialScreenView(),
+        builder: (_, __) => const HomeScreenView(),
       ),
     ],
   );

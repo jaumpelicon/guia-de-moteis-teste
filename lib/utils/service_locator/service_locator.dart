@@ -1,6 +1,8 @@
 import 'package:get_it/get_it.dart';
 
-import '../../ui/initial_screen/di/initial_screen_module.dart';
+import '../../data/repositorys/di/repositorys_module.dart';
+import '../../ui/core/di/commoms_module.dart';
+import '../../ui/home_screen/di/home_screen_module.dart';
 import 'app_module.dart';
 
 class ServiceLocator {
@@ -37,7 +39,9 @@ class ServiceLocator {
 
 void initializeDependencies() {
   final appModules = <AppModule>[
-    InitialScreenModule(),
+    CommomsModule(),
+    RepositorysModule(),
+    HomeScreenModule(),
   ];
 
   for (final module in appModules) {

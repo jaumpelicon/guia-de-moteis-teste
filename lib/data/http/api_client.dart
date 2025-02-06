@@ -1,20 +1,20 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:dartz/dartz.dart';
 import 'package:http/http.dart' as http;
 
+import '../../domain/errors/failure_error.dart';
+import '../../domain/errors/unexpected_error.dart';
 import 'api_host.dart';
 import 'endpoint.dart';
-
-typedef Failure = void Function(Exception error);
-typedef Success = void Function(dynamic response);
 
 class ApiProvider {
   final http.Client _client;
 
   ApiProvider({http.Client? client}) : _client = client ?? http.Client();
 
-  Future<void> request({required Endpoint endpoint, Success? success, Failure? failure}) async {
+  Future<Either<FailureError, dynamic>> request({required Endpoint endpoint}) async {
     final contentTypeValue = endpoint.contentType ?? ContentType.json.value;
 
     final headers = {
@@ -34,13 +34,23 @@ class ApiProvider {
       };
 
       if (response.statusCode >= 200 && response.statusCode < 300) {
-        final responseData = json.decode(response.body);
-        success?.call(responseData);
+        final responseData = utf8.decode(response.bodyBytes);
+        return Right(json.decode(responseData));
       } else {
-        throw Exception('Failed to load data: ${response.statusCode}');
+        return Left(
+          UnexpectedError(
+            code: response.statusCode.toString(),
+            errorMessage: 'Falha na chamada',
+          ),
+        );
       }
     } on Exception catch (error) {
-      failure?.call(error);
+      return Left(
+        UnexpectedError(
+          errorMessage: 'Algo deu errado tente novamente',
+          nestedException: error,
+        ),
+      );
     }
   }
 }

@@ -4,6 +4,6 @@ import 'app_colors.dart';
 
 class AppThemes {
   static final ThemeData theme = ThemeData(
-    scaffoldBackgroundColor: AppColors.white,
+    scaffoldBackgroundColor: AppColors.softWhite,
   );
 }
