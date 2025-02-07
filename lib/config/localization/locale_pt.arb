@@ -1,4 +1,9 @@
 {
   "@@locale": "pt",
-  "appTitle": ""
- }
+  "appTitle": "Motel Go",
+  "tryAgainInputitle": "Tentar novamente",
+  "goNowInputTitle": "ir agora",
+  "goLaterInputTitle": "ir outro dia",
+  "seeTitle": "ver",
+  "allTitle": "todos"
+}

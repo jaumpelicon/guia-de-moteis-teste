@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../../config/localization/localize.dart';
 import '../../../../domain/suite/suite_entity.dart';
+import '../../../../utils/service_locator/service_locator.dart';
 import '../../../core/extensions/numbers_extensions.dart';
 import '../../../core/styles/app_colors.dart';
 import '../../../core/styles/app_fonts.dart';
@@ -11,6 +13,8 @@ class SuiteItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = ServiceLocator.get<LocalizeProtocol>().l10n;
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4),
       child: SingleChildScrollView(
@@ -75,11 +79,11 @@ class SuiteItem extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         Text(
-                          'ver',
+                          l10n.seeTitle,
                           style: AppFonts.bold(15, AppColors.softGray),
                         ),
                         Text(
-                          'todos',
+                          l10n.allTitle,
                           style: AppFonts.bold(15, AppColors.softGray),
                         ),
                       ],

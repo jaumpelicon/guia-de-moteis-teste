@@ -1,4 +1,4 @@
-name: nomedoprojeto
+name: guia_de_motel_teste
 description: A new Flutter project.
 
 publish_to: "none"
@@ -25,6 +25,7 @@ dependencies:
   flutter_bloc: ^9.0.0
   dartz: ^0.10.1
   cached_network_image: ^3.4.1
+  mocktail: ^1.0.4
 
 dev_dependencies:
   flutter_test:

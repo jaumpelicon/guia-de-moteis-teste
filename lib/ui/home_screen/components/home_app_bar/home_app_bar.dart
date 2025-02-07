@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../config/localization/localize.dart';
+import '../../../../utils/service_locator/service_locator.dart';
 import '../../../core/components/svg_viewer.dart';
 import '../../../core/styles/app_assets.dart';
 import '../../../core/styles/app_colors.dart';
@@ -46,6 +48,8 @@ class _HomeAppBarState extends State<HomeAppBar> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = ServiceLocator.get<LocalizeProtocol>().l10n;
+
     return SliverAppBar(
       backgroundColor: AppColors.white,
       centerTitle: true,
@@ -82,7 +86,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
                       ),
                       const SizedBox(width: 4),
                       Text(
-                        'ir agora',
+                        l10n.goNowInputTitle,
                         style: AppFonts.bold(24, AppColors.darkGray),
                       ),
                     ],
@@ -102,7 +106,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      'ir outro dia',
+                      l10n.goLaterInputTitle,
                       style: AppFonts.bold(24, AppColors.white),
                     ),
                   ],
