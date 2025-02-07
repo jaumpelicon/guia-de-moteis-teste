@@ -5,8 +5,6 @@ import '../motels_repository.dart';
 class RepositorysModule extends AppModule {
   @override
   void registerDependencies() {
-    ServiceLocator.registerFactory<MotelsRepositoryProtocol>(() {
-      return MotelsRepository();
-    });
+    ServiceLocator.registerFactory<MotelsRepositoryProtocol>(() => MotelsRepository());
   }
 }

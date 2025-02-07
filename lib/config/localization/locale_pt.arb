@@ -1,9 +1,16 @@
 {
   "@@locale": "pt",
   "appTitle": "Motel Go",
+  "seeTitle": "ver",
+  "allTitle": "todos",
   "tryAgainInputitle": "Tentar novamente",
   "goNowInputTitle": "ir agora",
   "goLaterInputTitle": "ir outro dia",
-  "seeTitle": "ver",
-  "allTitle": "todos"
+  "httpErrorMessage": "Unsupported HTTP method: ${method}",
+  "@httpErrorMessage": {
+    "placeholders": {
+      "method": {}
+    }
+  },
+  "defaultErrorMessage": "Algo deu errado tente novamente"
 }

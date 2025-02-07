@@ -6,6 +6,12 @@ class LocalizationMock extends Mock implements Localization {
   String get appTitle => 'Motel Go';
 
   @override
+  String get seeTitle => 'ver';
+
+  @override
+  String get allTitle => 'todos';
+
+  @override
   String get tryAgainInputitle => 'Tentar novamente';
 
   @override
@@ -15,8 +21,10 @@ class LocalizationMock extends Mock implements Localization {
   String get goLaterInputTitle => 'ir outro dia';
 
   @override
-  String get seeTitle => 'ver';
+  String httpErrorMessage(Object method) {
+    return 'Unsupported HTTP method: \$$method';
+  }
 
   @override
-  String get allTitle => 'todos';
+  String get defaultErrorMessage => 'Algo deu errado tente novamente';
 }

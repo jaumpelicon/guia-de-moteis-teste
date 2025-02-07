@@ -35,6 +35,12 @@ class ServiceLocator {
   static void resetLazySingleton<T extends Object>() {
     _provider.resetLazySingleton<T>();
   }
+
+  static bool isRegistered<T extends Object>({
+    Object? instance,
+  }) {
+    return _provider.isRegistered<T>();
+  }
 }
 
 void initializeDependencies() {

@@ -17,18 +17,16 @@ class HomeScreenView extends StatefulWidget {
 }
 
 class _HomeScreenViewState extends State<HomeScreenView> {
-  late HomeBloc homeBloc;
+  final homeBloc = ServiceLocator.get<HomeBloc>();
   @override
   void initState() {
     super.initState();
-    homeBloc = ServiceLocator.get<HomeBloc>();
 
     homeBloc.add(GetHomeMotelsEvent());
   }
 
   @override
   Widget build(BuildContext context) {
-    // final l10n = Localize.instance.l10n;
     return Scaffold(
       body: BlocBuilder<HomeBloc, HomeState>(
         bloc: homeBloc,
