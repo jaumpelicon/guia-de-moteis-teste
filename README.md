@@ -1,4 +1,4 @@
-# Guia de Motel - Teste Técnico
+# 🌐 Guia de Motel - Teste Técnico
 
 Este projeto **`guia_de_motel_teste`** foi desenvolvido como parte de um teste técnico para demonstrar habilidades em Flutter, boas práticas de arquitetura e testes automatizados. O objetivo da aplicação é fornecer um guia de motéis, listando informações relevantes e permitindo a filtragem de opções disponíveis.
 
