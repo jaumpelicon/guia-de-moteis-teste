@@ -4,11 +4,13 @@ Este projeto **`guia_de_motel_teste`** foi desenvolvido como parte de um teste t
 
 ---
 
-## **Demonstração**
+## 🖼️ **Demonstração**
 
+<div display="flex">
 <img src="/assets/documentation_images/app_screen.png"  height=400/>
 <img src="/assets/documentation_images/app_screen_2.png"  height=400/>
 <img src="/assets/documentation_images/app_screen_2.png"  height=400/>
+</div>
 
 ---
 
