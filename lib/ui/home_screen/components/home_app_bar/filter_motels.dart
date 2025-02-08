@@ -1,5 +1,3 @@
-import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
 
 import '../../../core/components/svg_viewer.dart';
@@ -26,7 +24,7 @@ class FilterMotels extends StatelessWidget {
             child: Container(
               width: double.infinity,
               height: 80,
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -50,24 +48,21 @@ class FilterMotels extends StatelessWidget {
                         ? Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Transform.rotate(
-                                angle: math.pi / 2,
-                                child: const SvgViewer(
-                                  asset: AppAssets.icSliders,
-                                  height: 16,
-                                ),
+                              const SvgViewer(
+                                asset: AppAssets.icSliders,
+                                height: 16,
                               ),
                               const SizedBox(width: 8),
                               Text(
                                 filters[index],
-                                style: AppFonts.medium(14, AppColors.gray),
+                                style: AppFonts.regular(16, AppColors.gray),
                               ),
                             ],
                           )
                         : Text(
                             filters[index],
                             textAlign: TextAlign.center,
-                            style: AppFonts.medium(14, AppColors.gray),
+                            style: AppFonts.regular(14, AppColors.gray),
                           ),
                   );
                 },

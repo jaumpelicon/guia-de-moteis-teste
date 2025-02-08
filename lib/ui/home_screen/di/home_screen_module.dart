@@ -5,8 +5,6 @@ import '../bloc/home_bloc.dart';
 class HomeScreenModule extends AppModule {
   @override
   void registerDependencies() {
-    ServiceLocator.registerFactory(() {
-      return HomeBloc();
-    });
+    ServiceLocator.registerFactory(() => HomeBloc());
   }
 }

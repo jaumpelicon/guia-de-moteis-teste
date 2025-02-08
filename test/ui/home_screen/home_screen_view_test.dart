@@ -8,7 +8,10 @@ import 'package:guia_de_motel_teste/domain/suite/suite_categories_entity.dart';
 import 'package:guia_de_motel_teste/domain/suite/suite_entity.dart';
 import 'package:guia_de_motel_teste/domain/suite/suite_item_entity.dart';
 import 'package:guia_de_motel_teste/domain/suite/suite_period_entity.dart';
+import 'package:guia_de_motel_teste/ui/core/components/error_placeholder.dart';
 import 'package:guia_de_motel_teste/ui/home_screen/bloc/home_bloc.dart';
+import 'package:guia_de_motel_teste/ui/home_screen/components/home_app_bar/home_app_bar.dart';
+import 'package:guia_de_motel_teste/ui/home_screen/components/motel_item/motel_item.dart';
 import 'package:guia_de_motel_teste/ui/home_screen/home_screen_view.dart';
 import 'package:guia_de_motel_teste/utils/service_locator/service_locator.dart';
 import 'package:mockito/annotations.dart';
@@ -74,6 +77,7 @@ void main() {
     when(homeBloc.state).thenReturn(HomeError(error: error));
     when(homeBloc.stream).thenAnswer((_) => Stream.fromIterable([HomeError(error: error)]));
     await tester.pumpWidget(const MaterialApp(home: HomeScreenView()));
+    expect(find.byType(ErrorPlaceholder), findsOneWidget);
     expect(find.text('Error test'), findsOneWidget);
     expect(find.widgetWithText(TextButton, l10n.tryAgainInputitle), findsOneWidget);
   });
@@ -88,6 +92,10 @@ void main() {
         const MaterialApp(home: HomeScreenView()),
       );
     });
-    expect(find.byType(PageView), findsOneWidget);
+    expect(find.byType(CustomScrollView), findsOneWidget);
+    expect(find.byType(HomeAppBar), findsOneWidget);
+    expect(find.byType(SliverToBoxAdapter), findsOneWidget);
+    expect(find.byType(Divider), findsOneWidget);
+    expect(find.byType(MotelItem), findsOneWidget);
   });
 }
