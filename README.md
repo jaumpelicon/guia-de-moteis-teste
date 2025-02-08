@@ -183,7 +183,7 @@ Se preferir verificar diretamente no Visual Studio Code baixe as extensões:
 flutter test --coverage
 ```
 
-Aparecerá assim na aba de testes:
+Aparecerá assim na aba de testes:<br>
 <img src="/assets/documentation_images/coverage.png" />
 
 ---
