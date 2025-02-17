@@ -16,10 +16,6 @@ class FilterMotels extends StatelessWidget {
     return Stack(
       children: [
         child,
-        Container(
-          color: AppColors.red,
-          height: 240,
-        ),
         Align(
           alignment: Alignment.bottomCenter,
           child: Container(
