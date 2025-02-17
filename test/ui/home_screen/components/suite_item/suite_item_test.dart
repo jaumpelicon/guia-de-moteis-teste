@@ -46,7 +46,7 @@ void main() {
         )),
       );
     });
-    expect(find.byType(SingleChildScrollView), findsNWidgets(2));
+    expect(find.byType(SingleChildScrollView), findsOneWidget);
     expect(find.text(suiteMock.nome), findsOneWidget);
     expect(find.text(l10n.seeTitle), findsOneWidget);
     expect(find.text(l10n.allTitle), findsOneWidget);

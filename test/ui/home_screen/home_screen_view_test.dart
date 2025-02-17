@@ -92,10 +92,9 @@ void main() {
         const MaterialApp(home: HomeScreenView()),
       );
     });
-    expect(find.byType(CustomScrollView), findsOneWidget);
     expect(find.byType(HomeAppBar), findsOneWidget);
-    expect(find.byType(SliverToBoxAdapter), findsOneWidget);
-    expect(find.byType(Divider), findsOneWidget);
+    expect(find.byType(ListView), findsNWidgets(2));
+    expect(find.byType(Expanded), findsNWidgets(7));
     expect(find.byType(MotelItem), findsOneWidget);
   });
 }

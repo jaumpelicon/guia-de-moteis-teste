@@ -1,3 +1,4 @@
+import 'package:expandable_page_view/expandable_page_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:guia_de_motel_teste/config/localization/localize.dart';
@@ -49,17 +50,16 @@ void main() {
     await mockNetworkImagesFor(() async {
       await tester.pumpWidget(
         MaterialApp(
-            home: CustomScrollView(slivers: [
+            home: Column(children: [
           MotelItem(
             motel: motelMock,
           ),
         ])),
       );
     });
-    expect(find.byType(SliverFillRemaining), findsOneWidget);
     expect(find.text(motelMock.fantasia), findsOneWidget);
     expect(find.text(motelMock.bairro), findsOneWidget);
-    expect(find.byType(PageView), findsOneWidget);
+    expect(find.byType(ExpandablePageView), findsOneWidget);
     expect(find.byType(SuiteItem), findsOneWidget);
   });
 }

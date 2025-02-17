@@ -48,23 +48,20 @@ class _HomeScreenViewState extends State<HomeScreenView> {
   }
 
   Widget buildSuccessWidget(List<MotelEntity> motels) {
-    return CustomScrollView(
-      slivers: [
+    return Column(
+      children: [
         const HomeAppBar(),
-        const SliverToBoxAdapter(
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 4,
-            ),
-            child: Divider(),
+        Expanded(
+          child: ListView.builder(
+            padding: EdgeInsets.zero,
+            itemCount: motels.length,
+            itemBuilder: (context, index) {
+              return MotelItem(
+                motel: motels[index],
+              );
+            },
           ),
-        ),
-        ...motels.map((motel) {
-          return MotelItem(
-            motel: motel,
-          );
-        }),
+        )
       ],
     );
   }
