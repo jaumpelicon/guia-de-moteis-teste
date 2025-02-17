@@ -21,7 +21,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     final response = await repository.getMotels();
     response.fold(
       (error) => emit(HomeError(error: error)),
-      (success) => emit(HomeSuccess(motels: [...success, ...success, ...success])),
+      (success) => emit(HomeSuccess(motels: success)),
     );
   }
 }
