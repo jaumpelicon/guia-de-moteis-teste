@@ -1,4 +1,4 @@
-import 'package:flutter_gen/gen_l10n/localization.dart';
+import 'package:guia_de_motel_teste/config/generated/l10n/localization.dart';
 import 'package:mocktail/mocktail.dart';
 
 class LocalizationMock extends Mock implements Localization {

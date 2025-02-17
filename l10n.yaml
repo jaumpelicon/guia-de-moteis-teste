@@ -1,4 +1,6 @@
+synthetic-package: false
 arb-dir: lib/config/localization
+output-dir: lib/config/generated/l10n
 output-class: Localization
 template-arb-file: locale_pt.arb
 output-localization-file: localization.dart

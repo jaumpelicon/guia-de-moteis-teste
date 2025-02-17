@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/localization.dart';
 
+import 'config/generated/l10n/localization.dart';
 import 'config/localization/localize.dart';
 import 'router/mobile_router.dart';
 import 'ui/core/styles/app_themes.dart';

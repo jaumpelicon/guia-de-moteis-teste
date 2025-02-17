@@ -1,0 +1,2 @@
+D:/personal_projects/technical_tests/guia-de-moteis-teste/android/app/.cxx/Debug/5n2m195t/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/personal_projects/technical_tests/guia-de-moteis-teste/android/app/.cxx/Debug/5n2m195t/armeabi-v7a/CMakeFiles/rebuild_cache.dir
