@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../domain/motels/motel_entity.dart';
+import '../../../core/components/svg_viewer.dart';
+import '../../../core/styles/app_assets.dart';
 import '../../../core/styles/app_colors.dart';
 import '../../../core/styles/app_fonts.dart';
 import '../suite_item/suite_item.dart';
@@ -48,7 +50,10 @@ class MotelItem extends StatelessWidget {
                   ),
                 ),
                 const Spacer(),
-                const Icon(Icons.heart_broken)
+                const SvgViewer(
+                  asset: AppAssets.icHeart,
+                  height: 32,
+                ),
               ],
             ),
           ),
